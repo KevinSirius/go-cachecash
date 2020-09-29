@@ -4,3 +4,4 @@
 /docs-gen/
 /*.zip
 /fuzz
+/deploy/secrets/
