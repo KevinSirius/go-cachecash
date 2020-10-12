@@ -1,6 +1,6 @@
 # Go-Cachecash
 
-[![Build Status](https://travis-ci.com/cachecashproject/go-cachecash.svg?token=utLK2DGqpJaDNkKeJ4fh&branch=master)](https://travis-ci.com/cachecashproject/go-cachecash)
+[![Build Status](https://travis-ci.com/cachecashproject/go-cachecash.svg?token=q4KVLSDPkh5qcL9q3uwVJw&branch=master)](https://travis-ci.com/cachecashproject/go-cachecash)
 
 [![Coverage Status](https://coveralls.io/repos/github/cachecashproject/go-cachecash/badge.svg?t=0cosgH)](https://coveralls.io/github/cachecashproject/go-cachecash)
 
