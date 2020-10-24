@@ -11,9 +11,9 @@ update_docker_compose() {
 }
 
 start_db() {
-  while ! docker run --rm --net=cachecash --env-file ./deploy/secrets/ledger.secret postgres:11; do sleep 10; done
-  while ! docker run --rm --net=cachecash --env-file ./deploy/secrets/publisher.secret postgres:11postgres:11; do sleep 10; done
-  while ! docker run --rm --net=cachecash --env-file ./deploy/secrets/logpiped.secret postgres:11postgres:11; do sleep 10; done
+  if ! docker run -d --rm --net=cachecash --env-file ./deploy/secrets/ledger.secret postgres:11; do echo "database set up failed!"; done
+  if ! docker run -d --rm --net=cachecash --env-file ./deploy/secrets/publisher.secret postgres:11; do echo "database set up failed!"; done
+  if ! docker run -d --rm --net=cachecash --env-file ./deploy/secrets/logpiped.secret postgres:11; do echo "database set up failed!"; done
 }
 
 # check the build image's dockerfile; if it's been altered, build it.
