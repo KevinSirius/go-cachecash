@@ -161,7 +161,7 @@ func Solve(params Parameters, chunks [][]byte, goal []byte) ([]byte, uint32, err
 
 }
 
-func VerifySolution(params Parameters, chunks [][]byte, goal []byte, offset uint32) ([]byte, uint32, error) {
+func VerifySolution(params Parameters, chunks [][]byte, goal []byte, offset uint32, Tcrypto string) ([]byte, uint32, error) {
 	if err := params.Validate(); err != nil {
 		return nil, 0, errors.Wrap(err, "invalid parameters")
 	}
@@ -181,7 +181,7 @@ func VerifySolution(params Parameters, chunks [][]byte, goal []byte, offset uint
 		return chunks[chunkIdx][offset*aes.BlockSize : (offset+1)*aes.BlockSize], nil
 	}
 
-	result, secret, err := runPuzzle(params.Rounds, uint32(len(chunks)), offset, getBlockFn, dCrypto)
+	result, secret, err := runPuzzle(params.Rounds, uint32(len(chunks)), offset, getBlockFn, Tcrypto)
 	if err != nil {
 		return nil, 0, errors.Wrap(err, "failed to run puzzle")
 	}
