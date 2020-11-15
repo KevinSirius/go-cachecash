@@ -23,19 +23,16 @@ pacman -S git-lfs
 Download from https://git-lfs.github.com/
 ```
 
-Next, clone the cachecash repo:
-
-
-`Please Note now Go no longer needs to keep codes under GOPATH anymore. You can replace the directory with any folder you want. But we would recommend you to use GOPATH`
+Next, clone the cachecash repo into a folder:
 
 ```bash
-git clone git@github.com:cachecashproject/go-cachecash.git "$(go env GOPATH)/src/github.com/cachecashproject/go-cachecash"
+git clone git@github.com:cachecashproject/go-cachecash.git 
 ```
 
 And initialize git-lfs in that repo:
 
 ```bash
-cd "$(go env GOPATH)/src/github.com/cachecashproject/go-cachecash"
+cd go-cachecash
 git lfs install
 git lfs fetch
 git lfs checkout
@@ -54,7 +51,9 @@ LEDGER_DATABASE=host=ledger-db port=5432 user=cachecash password=cachecashPW dbn
 
 ## Setting up a development environment
 
-You will need a working Go toolchain.  We tend to stay on the latest stable version.
+You will need a working [Go] toolchain.  We tend to stay on the latest stable version.
+
+[Go]: https://golang.org/doc/install
 
 You will also need some extra code generation tools:
 
